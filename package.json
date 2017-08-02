@@ -1,0 +1,37 @@
+{
+  "name": "adminui",
+  "version": "1.0.0",
+  "description": "\"the Admin Ui folder\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://BalaSubramanyam@bitbucket.org/xntricteam/adminui.git"
+  },
+  "author": "Balasubramanyam, Vasu Dundigalla, Vasantha K",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/xntricteam/adminui#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-animate": "^1.6.5",
+    "angular-aria": "^1.6.5",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "assert": "^1.4.1",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.1",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.5",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
