@@ -5,13 +5,21 @@ const config = require("./config");
 const mongo = require("mongodb").MongoClient;
 const api = require("./app/routes/api.js")(app, express);
 
+mongoose.Promise = global.Promise;
+
+mongoose.connect(config.database)
+		.then((data)=> {
+			console.log("connected to mongoose");
+		}).catch((err)=> {
+			console.log("err in connecting to mongoose")
+		});
+
 mongo.connect(config.database)
 	.then((data)=> {
 		console.log("the database is "+data);
 }).catch((err) => {
 	console.log("there is a error");
 });
-// console.log(config.database);
 
 app.use("/api", api);
 
