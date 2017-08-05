@@ -12,7 +12,8 @@ const AdminDetails = new Schema({
 	},
 	adminPassword: {
 		type: String,
-		required: true
+		required: true,
+		selected: false
 	},
 	adminFirstName: {
 		type: String
