@@ -1,20 +1,46 @@
 console.log("in api.js");
-const CreateVendor = require("../handlers/createVendor");
-const CreateAdmin = require("../handlers/createAdmin");
-const CreateDriver = require("../handlers/createDriver");
+const Test = require("../models/testSchema");
+const createVendor = require("../handlers/createVendor.js");
+const createAdmin = require("../handlers/createAdmin.js");
+const createDriver = require("../handlers/createDriver.js");
+const adminLogin = require("../handlers/loginAdmin.js");
+const vendorLogin = require("../handlers/loginVendor.js");
 
 module.exports = (app, express)=>{
 	const api = express.Router();
 	
-	api.post("/", (req, res)=> {
-		res.json({message: "api working perfect"});
+	api.get("/", (req, res)=> {
+		Admin.find({}, (err, users) => {
+			if(err) {
+				console.log(err);
+			} else {
+				console.log(users);
+				res.send(users);
+			}
+		});
 	});
 
-	api.post("/createVendor", CreateVendor);
+	api.post("/test", (req, res)=> {
+		const testing = new Test ({
+			username: req.body.username,
+			password: req.body.password
+		});
 
-	api.post("/createAdmin", CreateAdmin);
+		testing.save()
+				.then(()=> {
+					console.log("test successful");
+					res.json({message: "check for values in mlab"});
+				});
+	});
+	api.post("/createVendor", createVendor);
 
-	api.post("/createDriver", CreateDriver);
+	api.post("/createAdmin", createAdmin);
+
+	api.post("/createDriver", createDriver);
+
+	api.post("/adminLogin", adminLogin);
+
+	api.post("/vendorLogin", vendorLogin);
 
 	console.log("in module.exports of api");
 

@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const config = require("./config");
+const config = require("./config.js");
 const mongo = require("mongodb").MongoClient;
 const api = require("./app/routes/api.js")(app, express);
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
 
 mongoose.Promise = global.Promise;
 
@@ -15,17 +17,21 @@ mongoose.connect(config.database)
 		});
 
 mongo.connect(config.database)
-	.then((data)=> {
-		console.log("the database is "+data);
+	.then(()=> {
+		console.log("the database is "+config.database);
 }).catch((err) => {
 	console.log("there is a error");
 });
 
-app.use("/api", api);
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
 
-app.get("*", (req, res)=> {
-	res.sendFile(__dirname+'/index.html');
-});
+app.use(bodyParser.json());
+
+app.use(morgan('dev'));
+
+app.use("/api", api);
 
 app.listen(config.port, function(err) {
 	if(err) {

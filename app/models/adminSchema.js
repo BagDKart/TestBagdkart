@@ -1,6 +1,7 @@
 console.log("in adminSchema");
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt");
 
 const AdminDetails = new Schema({
 	adminUsername: {
@@ -30,3 +31,20 @@ const AdminDetails = new Schema({
 		required: true
 	}
 });
+
+AdminDetails.pre('save', function (next){
+	let adSave = this;
+    	bcrypt.hash(adSave.adminPassword, 10).then((hash) => {
+	        adSave.adminPassword = hash; //if there is no error we are going to hash
+	        next();
+	    }).catch((err) => {
+	    	console.log("password not hashed :"+err);
+	    });
+});
+
+AdminDetails.methods.comparePassword = function (pwd) {
+	const adminUser = this;
+	return bcrypt.compareSync(pwd, adminUser.adminPassword);
+};
+
+module.exports = mongoose.model("Admin", AdminDetails);

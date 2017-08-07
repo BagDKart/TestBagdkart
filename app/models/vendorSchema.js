@@ -42,6 +42,20 @@ const VendorFields = new Schema({
 	}
 });
 
+VendorFields.pre('save', function (next){
+	let venSave = this;
+    	bcrypt.hash(venSave.password, 10).then((hash) => {
+	        venSave.password = hash; //if there is no error we are going to hash
+	        next();
+	    }).catch((err) => {
+	    	console.log("password not hashed :"+err);
+	    });
+});
+
+VendorFields.methods.comparePassword = function (pwd) {
+	const venUser = this;
+	return bcrypt.compareSync(pwd, venUser.password);
+};
 const Vendor = mongoose.model("Vendor", VendorFields);
 
 module.exports = Vendor;
