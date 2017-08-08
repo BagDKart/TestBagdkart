@@ -3,10 +3,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const DriverDetails = new Schema ({
-	driverName: {
-		type: String,
-		required: true
-	},
 	driverPhoneNumber: {
 		type: String,
 		required: true
@@ -23,7 +19,7 @@ const DriverDetails = new Schema ({
 		required: true,
 		selected: false
 	},
-	driverCode: {
+	driverId: {
 		type: String,
 		required: true,
 		index: {
@@ -40,10 +36,6 @@ const DriverDetails = new Schema ({
 		type: String,
 		required: true
 	},
-	driverContactNumber: {
-		type: Number,
-		required: true
-	},
 	driverLicenceNumber: {
 		type: String,
 		required: true,
@@ -51,11 +43,26 @@ const DriverDetails = new Schema ({
 			unique: true
 		}
 	},
-	driverVechicleNumber: {
+	driverVehicleNumber: {
 		type: String,
 		required: true
 	}
 });
+
+DriverDetails.pre('save', function (next){
+	let driverSave = this;
+    	bcrypt.hash(driverSave.driverPassword, 10).then((hash) => {
+	        driverSave.driverPassword = hash; //if there is no error we are going to hash
+	        next();
+	    }).catch((err) => {
+	    	console.log("password not hashed :"+err);
+	    });
+});
+
+DriverDetails.methods.comparePassword = function (pwd) {
+	const driverUser = this;
+	return bcrypt.compareSync(pwd, driverUser.driverPassword);
+};
 
 const Driver = mongoose.model("Driver", DriverDetails);
 module.exports = Driver;
