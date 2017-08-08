@@ -23,7 +23,7 @@ const VendorFields = new Schema({
 		required: true
 	},
 	firstName: {
-		type: String.
+		type: String
 	},
 	lastName: {
 		type: String
@@ -56,6 +56,7 @@ VendorFields.methods.comparePassword = function (pwd) {
 	const venUser = this;
 	return bcrypt.compareSync(pwd, venUser.password);
 };
+
 const Vendor = mongoose.model("Vendor", VendorFields);
 
 module.exports = Vendor;

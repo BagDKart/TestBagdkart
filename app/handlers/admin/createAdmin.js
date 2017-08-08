@@ -1,5 +1,5 @@
 console.log("in create Admin");
-const Admin = require("../models/adminSchema");
+const Admin = require("../../models/adminSchema");
 module.exports = (req, res) => {
 	
 	const adminUser = new Admin ({

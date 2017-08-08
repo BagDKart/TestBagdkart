@@ -1,10 +1,10 @@
 console.log("in api.js");
 const Test = require("../models/testSchema");
-const createVendor = require("../handlers/createVendor.js");
-const createAdmin = require("../handlers/createAdmin.js");
-const createDriver = require("../handlers/createDriver.js");
-const adminLogin = require("../handlers/loginAdmin.js");
-const vendorLogin = require("../handlers/loginVendor.js");
+const createVendor = require("../handlers/vendor/createVendor.js");
+const createAdmin = require("../handlers/admin/createAdmin.js");
+const createDriver = require("../handlers/driver/createDriver.js");
+const adminLogin = require("../handlers/admin/loginAdmin.js");
+const vendorLogin = require("../handlers/vendor/loginVendor.js");
 
 module.exports = (app, express)=>{
 	const api = express.Router();
