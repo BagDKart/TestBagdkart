@@ -14,7 +14,7 @@ function createToken (user) {
 
 module.exports = (req, res) => {
 	Admin.findOne({ 
-		adminUsername: req.body.username
+		adminEmail: req.body.email
 	},'adminPassword', function(err, user) {
 		const adminJSON = JSON.parse(JSON.stringify(user));
 		if(err) return err;
