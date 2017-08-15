@@ -1,10 +1,14 @@
 console.log("in api.js");
 const Test = require("../models/testSchema");
+
 const createVendor = require("../handlers/vendor/createVendor.js");
 const createAdmin = require("../handlers/admin/createAdmin.js");
 const createDriver = require("../handlers/driver/createDriver.js");
+
 const adminLogin = require("../handlers/admin/loginAdmin.js");
 const vendorLogin = require("../handlers/vendor/loginVendor.js");
+
+const vendorPD = require("../handlers/vendor/req_for_pickup/pick&drop_addr");
 
 module.exports = (app, express)=>{
 	const api = express.Router();
@@ -41,6 +45,8 @@ module.exports = (app, express)=>{
 	api.post("/adminLogin", adminLogin);
 
 	api.post("/vendorLogin", vendorLogin);
+
+	api.post("/vendorPD", vendorPD);
 
 	console.log("in module.exports of api");
 
