@@ -6,16 +6,10 @@ const Schema = mongoose.Schema;
 const OrderDetails = new Schema({
 	pickupLocation: {
 		required: true,
-		index: {
-			unique: true
-		},
 		type: String
 	},
 	dropLocation: {
 		required: true,
-		index: {
-			unique: true
-		},
 		type: String
 	},
 	packageType: {
@@ -24,9 +18,6 @@ const OrderDetails = new Schema({
 	},
 	deliveryType: {
 		required: true,
-		index: {
-			unique: true
-		},
 		type:String
 	},
 	paymentMethod: {

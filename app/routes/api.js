@@ -1,6 +1,8 @@
 console.log("in api.js");
+const Admin = require("../models/adminSchema");
 const Test = require("../models/testSchema");
-
+const TestingValue = require("../models/testingSchema");
+const VendorOrder = require("../models/orderSchema");
 const createVendor = require("../handlers/vendor/createVendor.js");
 const createAdmin = require("../handlers/admin/createAdmin.js");
 const createDriver = require("../handlers/driver/createDriver.js");
@@ -25,16 +27,19 @@ module.exports = (app, express)=>{
 	});
 
 	api.post("/test", (req, res)=> {
+		const pickup = "kothapet"
 		const testing = new Test ({
-			username: req.body.username,
+			test: new Admin(),
 			password: req.body.password
 		});
 
-		testing.save()
-				.then(()=> {
-					console.log("test successful");
-					res.json({message: "check for values in mlab"});
-				});
+		console.log(testing.test);
+		res.json(testing);
+		// testing.save()
+		// 		.then(()=> {
+		// 			console.log("test successful");
+		// 			res.json({message: "check for values in mlab"});
+		// 		});
 	});
 	api.post("/createVendor", createVendor);
 

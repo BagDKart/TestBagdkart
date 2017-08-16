@@ -4,12 +4,9 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 
 const TestDetails = new Schema ({
-	username: {
+	test: {
 		type: String,
-		required: true,
-		index: {
-			unique: true
-		}
+		ref: 'AdminSchema'
 	},
 	password: {
 		type: String
@@ -26,6 +23,6 @@ TestDetails.pre("save", function(next) {
 	    });
 });	
 
-const Test = mongoose.model("Test", TestDetails);
+const TestValue = mongoose.model("TestValue", TestDetails);
 
-module.exports = Test;
+module.exports = TestValue;
