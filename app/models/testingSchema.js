@@ -8,4 +8,6 @@ const TestingDetails = new Schema({
 });
 
 const Testing = mongoose.model("Testing", TestingDetails);
-module.exports = Testing;
+module.exports = {
+	Testing
+};

@@ -2,7 +2,7 @@ console.log("in create Admin");
 const Admin = require("../../models/adminSchema");
 module.exports = (req, res) => {
 	
-	const adminUser = new Admin ({
+	const adminUser = new Admin.Admin ({
 		adminUsername: req.body.username,
 		adminPassword: req.body.password,
 		adminFirstName: req.body.firstname,

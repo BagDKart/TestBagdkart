@@ -65,4 +65,6 @@ DriverDetails.methods.comparePassword = function (pwd) {
 };
 
 const Driver = mongoose.model("Driver", DriverDetails);
-module.exports = Driver;
+module.exports = {
+	Driver
+};

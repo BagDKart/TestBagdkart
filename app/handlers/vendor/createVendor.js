@@ -1,7 +1,7 @@
 console.log("in create vendor");
 const Vendor = require("../../models/vendorSchema");
 module.exports = (req, res) => {
-	const vendorUser = new Vendor ({
+	const vendorUser = new Vendor.Vendor ({
 		username: req.body.username,
 		password: req.body.password,
 		firstName: req.body.firstname,

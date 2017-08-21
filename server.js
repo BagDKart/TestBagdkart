@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const config = require("./config.js");
+const lodash = require("lodash");
 const mongo = require("mongodb").MongoClient;
-const api = require("./app/routes/api.js")(app, express);
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
+
+const api = require("./app/routes/api.js")(app, express);
+const config = require("./config.js");
 const port = config.port;
 
 mongoose.Promise = global.Promise;

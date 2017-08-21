@@ -47,4 +47,7 @@ AdminDetails.methods.comparePassword = function (pwd) {
 	return bcrypt.compareSync(pwd, adminUser.adminPassword);
 };
 
-module.exports = mongoose.model("Admin", AdminDetails);
+const Admin = mongoose.model("Admin", AdminDetails);
+module.exports = {
+	Admin
+};

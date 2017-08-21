@@ -14,7 +14,7 @@ function createToken (user) {
 };
 
 module.exports = (req, res) => {
-	Vendor.findOne({ 
+	Vendor.Vendor.findOne({ 
 		username: req.body.username
 	},'password', function(err, user) {
 		const vendorJSON = JSON.parse(JSON.stringify(user));

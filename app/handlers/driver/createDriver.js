@@ -2,7 +2,7 @@ console.log("in driver create");
 const Driver = require("../../models/driverSchema");
 
 module.exports = (req, res) => {
-	const driverDetails = new Driver({
+	const driverDetails = new Driver.Driver({
 		driverName: req.body.name,
 		driverPhoneNumber: req.body.phNumber,
 		driverUsername: req.body.username,

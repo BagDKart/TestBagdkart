@@ -13,10 +13,11 @@ function createToken (user) {
 };
 
 module.exports = (req, res) => {
-	Admin.findOne({ 
+	Admin.Admin.findOne({ 
 		adminEmail: req.body.email
 	},'adminPassword', function(err, user) {
 		const adminJSON = JSON.parse(JSON.stringify(user));
+		console.log(adminJSON._id);
 		if(err) return err;
 		if(!user) {
 			return res.json({ message: " he is not admin" });

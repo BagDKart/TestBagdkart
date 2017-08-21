@@ -59,4 +59,6 @@ VendorFields.methods.comparePassword = function (pwd) {
 
 const Vendor = mongoose.model("Vendor", VendorFields);
 
-module.exports = Vendor;
+module.exports = {
+	Vendor
+};
