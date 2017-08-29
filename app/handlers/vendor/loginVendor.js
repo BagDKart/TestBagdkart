@@ -1,5 +1,5 @@
 console.log("in vendor login");
-const Vendor = require("../../models/vendorSchema");
+const Vendor = require("../../models/vendor/vendorSchema");
 const jwt = require("jsonwebtoken");
 const config = require("../../../config");
 const secretKey = config.secretKey;

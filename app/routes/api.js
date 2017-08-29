@@ -5,18 +5,17 @@ const jwt = require("jsonwebtoken");
 const config = require("../../config");
 const secretKey = config.secretKey;
 const Test = require("../models/testSchema");
-const Admin = require("../models/adminSchema");
-// const TestingValue = require("../models/testingSchema");
-const VendorOrder = require("../models/orderSchema");
-const Vendor = require("../models/vendorSchema");
+const Admin = require("../models/admin/adminSchema");
+const TestingValue = require("../models/testingSchema");
+const VendorOrder = require("../models/vendor/vendorOrderProvideSchema");
+const Vendor = require("../models/vendor/vendorSchema");
 const createVendor = require("../handlers/vendor/createVendor.js");
 const createAdmin = require("../handlers/admin/createAdmin.js");
 const createDriver = require("../handlers/driver/createDriver.js");
-
 const adminLogin = require("../handlers/admin/loginAdmin.js");
 const vendorLogin = require("../handlers/vendor/loginVendor.js");
-
 const vendorPD = require("../handlers/vendor/req_for_pickup/pick&drop_addr");
+const TestApi = require("../handlers/vendor/testapi");
 
 module.exports = (app, express)=>{
 	const api = express.Router();
@@ -32,19 +31,19 @@ module.exports = (app, express)=>{
 		});
 	});
 
-	api.post("/test/:token", (req, res)=> {
-		const pickup = "kothapet";
-		console.log(`these are request params.. ${req.params}`)
-		const token = req.params.token;
+	// api.post("/test/:token", (req, res)=> {
+	// 	const pickup = "kothapet";
+	// 	console.log(`these are request params.. ${req.params}`)
+	// 	const token = req.params.token;
 		
-		if(token) {
-			console.log("token is present");
-			res.send(req.params.token);
-		} else {
-			console.log("token is absent");
-			res.send("no token");
-		}
-	});
+	// 	if(token) {
+	// 		console.log("token is present");
+	// 		res.send(req.params.token);
+	// 	} else {
+	// 		console.log("token is absent");
+	// 		res.send("no token");
+	// 	}
+	// });
 
 	api.post("/globalTest", (req, res)=> {
 		console.log(global);
@@ -60,7 +59,6 @@ module.exports = (app, express)=>{
 	api.post("/adminLogin", adminLogin);
 
 	api.post("/vendorLogin", vendorLogin);
-
 
 	api.use((req, res, next) => {
 		const token = req.body.token;
@@ -82,7 +80,11 @@ module.exports = (app, express)=>{
 		res.json(req.decoded);
 	});
 
+	api.post('/test', TestApi.trial);
+
 	api.post("/vendorPD", vendorPD.Details);
+	api.post("/vendorPdetails", vendorPD.showDetails);
+	api.post("/vendorPappend", vendorPD.appendDetails);
 
 	api.post('/testing', (req, res)=> {
 		

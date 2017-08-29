@@ -14,10 +14,6 @@ const OrderDetails = new Schema ({
 			unique: false
 		}
 	},
-	customer: {
-		type: String,
-		ref: 'Customer'
-	},	
 });
 
 // TestDetails.pre("save", function(next) {

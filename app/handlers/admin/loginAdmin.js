@@ -1,4 +1,4 @@
-const Admin = require("../../models/adminSchema");
+const Admin = require("../../models/admin/adminSchema");
 const jwt = require("jsonwebtoken");
 const config = require("../../../config");
 const secretKey = config.secretKey;

@@ -42,10 +42,22 @@ const OrderDetails = new Schema ({
 	packageTime: {
 		type: Date,
 		index: {
-			unique: false
+			unique: true
 		},
 		default: Date.now
-	}	
+	},
+	addrDetails: {
+		type: String,
+		index: {
+			unique: false
+		}
+	},
+	specInstruc: {
+		type: String,
+		index: {
+			unique: false
+		}
+	}
 });
 
 const OrderVendor = mongoose.model("OrderVendor", OrderDetails);

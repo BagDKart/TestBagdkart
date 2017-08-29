@@ -1,5 +1,5 @@
 console.log("in driver create");
-const Driver = require("../../models/driverSchema");
+const Driver = require("../../models/driver/driverSchema");
 
 module.exports = (req, res) => {
 	const driverDetails = new Driver.Driver({
