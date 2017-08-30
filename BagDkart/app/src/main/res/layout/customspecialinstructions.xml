@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginTop="80dp"
+    android:layout_marginEnd="40dp">
+
+    <TextView
+        android:id="@+id/customspecialinstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:text="Special Instructions" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editcustomspecialinstructions"
+        android:inputType="text"
+        android:hint="Special Instructions"
+        android:textColor="#000"
+        android:textColorHint="#3c000000"
+        android:background="@drawable/custom" />
+
+</LinearLayout>

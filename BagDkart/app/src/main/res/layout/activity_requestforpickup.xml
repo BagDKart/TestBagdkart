@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    tools:context="com.example.vivek.bagdkart.Requestforpickup">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#ffff">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/editTextpickup"
+            android:hint="Pick up Location"
+            android:fontFamily="sans-serif"
+            android:textColorHint="#3c000000"
+            android:paddingStart="40dp"
+            android:textColor="#000"
+            android:paddingEnd="40dp"
+            android:background="#ffff" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:src="@mipmap/pickup"
+            android:id="@+id/imgpickup"/>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="05dp"
+        android:id="@+id/cardView2"
+        android:layout_below="@id/cardView"
+        android:background="#ffff">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffff"
+            android:hint="Delivery Location"
+            android:fontFamily="sans-serif"
+            android:textColor="#000"
+            android:textColorHint="#3c000000"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:id="@+id/editTextdrop" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/delivery"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:id="@+id/imgdrop"/>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardView3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="05dp"
+        android:layout_below="@id/cardView2"
+        android:background="#ffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_below="@+id/cardView"
+            android:background="#ffff"
+            android:id="@+id/linearLayout1">
+
+            <TextView
+                android:id="@+id/packagedetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingTop="10dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#000"
+                android:text="Package details" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="35dp"
+                android:background="#ffff">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#ffff">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/normal"
+                    android:id="@+id/imgnormal"
+                    />
+                 <TextView
+                android:id="@+id/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="#000"
+                android:background="#fff"
+                     android:layout_marginStart="10dp"
+                     android:paddingTop="5dp"
+                     android:paddingEnd="10dp"
+                android:text="Normal" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:background="#ffff">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="#ffff">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/catering"
+                        android:id="@+id/imgcatering"
+                        android:background="#ffff"/>                        />
+                    <TextView
+                        android:id="@+id/catering"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#000"
+                        android:background="#fff"
+                        android:layout_marginStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="5dp"
+                        android:text="catering" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/linearLayout1"
+            android:background="#ffff"
+            android:id="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/packagetype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:paddingTop="10dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Schedule" />
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="80dp"
+                android:background="#ffff">>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#ffff">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/asap"
+                android:id="@+id/imgasap" />
+
+                <TextView
+                    android:id="@+id/asap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:background="#fff"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:text="ASAP" />
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:background="#ffff">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#ffff">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/future"
+                    android:id="@+id/imgfuture"
+                    android:layout_marginStart="15dp"
+
+                    />
+                <TextView
+                    android:id="@+id/future"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:layout_marginStart="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="Future" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardView4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/cardView3"
+        android:background="#ffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativelayout1"
+            android:background="#ffff">
+
+            <TextView
+                android:id="@+id/customerdetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:text="Customer Details" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:text="Name"
+                android:layout_below="@+id/customerdetails"/>
+
+            <TextView
+                android:id="@+id/mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginStart="200dp"
+                android:text="Mobile"
+                android:layout_below="@+id/customerdetails"/>
+            <EditText
+                android:id="@+id/editTextname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:ems="7"
+                android:textColor="#000"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/editTextmobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mobile"
+                android:layout_toEndOf="@+id/editTextname"
+                android:ems="10"
+                android:paddingLeft="10dp"
+                android:textCursorDrawable="@color/colorBackground"
+                android:textColor="#000"
+                android:inputType="phone" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/editTextmobile">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="#ffff">
+
+                    <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/address"
+                    android:id="@+id/imgaddress"
+                        />
+                <TextView
+                    android:id="@+id/addressdetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:background="#ffff"
+                    android:layout_marginStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Address details"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="05dp"
+        android:layout_below="@id/cardView4"
+        android:id="@+id/cardView5">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff"
+            android:paddingBottom="10dp"
+            android:id="@+id/relativelayout2">
+
+
+            <TextView
+                android:id="@+id/deliverytype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:background="#ffff"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:text="Delivery type"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#30000000"
+                android:textColor="#91000000"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:layout_below="@id/deliverytype"
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="05dp"
+                android:drawableStart="@mipmap/normalp"
+                android:id="@+id/buttonnormalp"
+                android:text="Normal"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#30000000"
+                android:textColor="#91000000"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:layout_below="@id/deliverytype"
+                android:layout_toEndOf="@+id/buttonnormalp"
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="05dp"
+                android:drawableStart="@mipmap/express"
+                android:id="@+id/buttonexpress"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="Express"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#30000000"
+                android:textColor="#91000000"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:layout_below="@id/deliverytype"
+                android:layout_toEndOf="@+id/buttonexpress"
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="05dp"
+                android:id="@+id/buttonsecure"
+                android:drawableStart="@mipmap/secure"
+                android:text="Secure"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffff"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cardView6"
+        android:layout_below="@id/cardView5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="#ffff">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/special_instructions"
+                android:id="@+id/imgspecialinsructions"
+                />
+            <TextView
+                android:id="@+id/specialinsructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="#000"
+                android:background="#ffff"
+                android:layout_marginStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Special Insructions"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fa4844"
+        android:text="Request for Driver"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/rfd"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/cardView6"/>
+
+
+
+</RelativeLayout>
