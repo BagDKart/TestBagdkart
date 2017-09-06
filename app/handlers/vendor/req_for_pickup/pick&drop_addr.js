@@ -15,6 +15,8 @@ const Details = (req, res) => {
 		packageType : req.body.type, 
 		deliveryType : req.body.delivery,
 		paymentMethod : "contract",
+		customerName: req.body.customerName,
+		customerNumber: req.body.customerNumber,
 		packageTime : req.body.time,
 		addrDetails: req.body.addrDetails,
 		specInstruc: req.body.instructions

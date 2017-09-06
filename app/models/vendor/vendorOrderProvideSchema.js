@@ -37,14 +37,29 @@ const OrderDetails = new Schema ({
 	},
 	userId: {
 		type: Schema.Types.ObjectId,
-		ref: 'Admin'
+		ref: 'Admin',
+		index: {
+			unique: true
+		}
 	},
 	packageTime: {
 		type: Date,
 		index: {
-			unique: true
+			unique: false
 		},
 		default: Date.now
+	},
+	customerName: {
+		type: String,
+		index: {
+			unique: false
+		}
+	},
+	customerNumber: {
+		type: String,
+		index: {
+			unique: false
+		}
 	},
 	addrDetails: {
 		type: String,

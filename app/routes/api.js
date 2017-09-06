@@ -16,6 +16,10 @@ const adminLogin = require("../handlers/admin/loginAdmin.js");
 const vendorLogin = require("../handlers/vendor/loginVendor.js");
 const vendorPD = require("../handlers/vendor/req_for_pickup/pick&drop_addr");
 const TestApi = require("../handlers/vendor/testapi");
+const OrderGenerateVendor = require("../handlers/vendor/req_for_pickup/OrderGenerate");
+const vendorProfile = require("../handlers/vendor/profile/vendorProfile");
+const vendorCancelOrder = require("../handlers/vendor/cancelOrder");
+const vendorOrderHistory = require("../handlers/vendor/orderHistory");
 
 module.exports = (app, express)=>{
 	const api = express.Router();
@@ -30,20 +34,6 @@ module.exports = (app, express)=>{
 			}
 		});
 	});
-
-	// api.post("/test/:token", (req, res)=> {
-	// 	const pickup = "kothapet";
-	// 	console.log(`these are request params.. ${req.params}`)
-	// 	const token = req.params.token;
-		
-	// 	if(token) {
-	// 		console.log("token is present");
-	// 		res.send(req.params.token);
-	// 	} else {
-	// 		console.log("token is absent");
-	// 		res.send("no token");
-	// 	}
-	// });
 
 	api.post("/globalTest", (req, res)=> {
 		console.log(global);
@@ -85,6 +75,9 @@ module.exports = (app, express)=>{
 	api.post("/vendorPD", vendorPD.Details);
 	api.post("/vendorPdetails", vendorPD.showDetails);
 	api.post("/vendorPappend", vendorPD.appendDetails);
+	api.post("/vendorCancelOrder", vendorCancelOrder.cancelOrder);
+	api.post("/vendorOrderHistory", vendorOrderHistory.orderHistory);
+	api.post("/orderGenerate", OrderGenerateVendor.orderGenerate);
 
 	api.post('/testing', (req, res)=> {
 		
@@ -103,6 +96,8 @@ module.exports = (app, express)=>{
 					res.send("didnt save");
 				});
 	});
+
+	api.post("/vendorProfile", vendorProfile.profileView);
 
 	console.log("in module.exports of api");
 
