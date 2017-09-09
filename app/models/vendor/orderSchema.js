@@ -53,7 +53,6 @@ const OrderConfirm = new Schema({
 	},
 	arrivalTime: {
 		type: Date,
-		required: true
 	}
 });
 
