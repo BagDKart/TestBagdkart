@@ -9,57 +9,66 @@ const OrderDetails = new Schema ({
 		type: String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	dropLocation: {
 		type: String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	packageType: {
 		type: String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	deliveryType: {
 		type:String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	paymentMethod: {
 		type: String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	userId: {
 		type: Schema.Types.ObjectId,
 		ref: 'Admin',
 		index: {
 			unique: true
-		}
+		},
+		required: true
 	},
 	packageTime: {
 		type: Date,
 		index: {
 			unique: false
 		},
-		default: Date.now
+		default: Date.now,
+		required: true
 	},
 	customerName: {
 		type: String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	customerNumber: {
 		type: String,
 		index: {
 			unique: false
-		}
+		},
+		required: true
 	},
 	addrDetails: {
 		type: String,

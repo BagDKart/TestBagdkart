@@ -46,8 +46,6 @@ const appendDetails = (req, res)=> {
 		.then((db)=> {
 			db.collection("ordervendors").find({pickupLocation: "mohan nagar"}).toArray((err, result)=> {
 				if(err) return err;
-				// console.log(result);
-				// res.send(result);
 				const location = {testValue: "test"}
 				const mylocation = { $set: {testValue: "jambalakadi pamba"} };
 				db.collection('testings').update(location, mylocation).then((data)=> {

@@ -4,22 +4,25 @@ const jwt = require("jsonwebtoken");
 
 const config = require("../../config");
 const secretKey = config.secretKey;
+
 const Test = require("../models/testSchema");
 const Admin = require("../models/admin/adminSchema");
 const TestingValue = require("../models/testingSchema");
 const VendorOrder = require("../models/vendor/vendorOrderProvideSchema");
 const Vendor = require("../models/vendor/vendorSchema");
+
 const createVendor = require("../handlers/vendor/createVendor.js");
 const createAdmin = require("../handlers/admin/createAdmin.js");
 const createDriver = require("../handlers/driver/createDriver.js");
 const adminLogin = require("../handlers/admin/loginAdmin.js");
 const vendorLogin = require("../handlers/vendor/loginVendor.js");
 const vendorPD = require("../handlers/vendor/req_for_pickup/pick&drop_addr");
-const TestApi = require("../handlers/vendor/testapi");
-const OrderGenerateVendor = require("../handlers/vendor/req_for_pickup/OrderGenerate");
+const testApi = require("../handlers/vendor/testapi");
+const orderGenerateVendor = require("../handlers/vendor/req_for_pickup/OrderGenerate");
 const vendorProfile = require("../handlers/vendor/profile/vendorProfile");
 const vendorCancelOrder = require("../handlers/vendor/cancelOrder");
 const vendorOrderHistory = require("../handlers/vendor/orderHistory");
+const vendorOrderDetails = require("../handlers/vendor/orderDetails");
 
 module.exports = (app, express)=>{
 	const api = express.Router();
@@ -35,19 +38,15 @@ module.exports = (app, express)=>{
 		});
 	});
 
-	api.post("/globalTest", (req, res)=> {
-		console.log(global);
-		res.json("check the console");
-	});
-
+	// api.post("/globalTest", (req, res)=> {
+	// 	console.log(global);
+	// 	res.json("check the console");
+	// });
+	
 	api.post("/createVendor", createVendor);
-
 	api.post("/createAdmin", createAdmin);
-
 	api.post("/createDriver", createDriver);
-
 	api.post("/adminLogin", adminLogin);
-
 	api.post("/vendorLogin", vendorLogin);
 
 	api.use((req, res, next) => {
@@ -70,32 +69,18 @@ module.exports = (app, express)=>{
 		res.json(req.decoded);
 	});
 
-	api.post('/test', TestApi.trial);
+	api.post('/test', testApi.trial);
 
 	api.post("/vendorPD", vendorPD.Details);
 	api.post("/vendorPdetails", vendorPD.showDetails);
 	api.post("/vendorPappend", vendorPD.appendDetails);
 	api.post("/vendorCancelOrder", vendorCancelOrder.cancelOrder);
 	api.post("/vendorOrderHistory", vendorOrderHistory.orderHistory);
-	api.post("/orderGenerate", OrderGenerateVendor.orderGenerate);
+	api.post("/orderGenerate", orderGenerateVendor.orderGenerate);
+	api.post("/vendorOrderDetails", vendorOrderDetails.orderDetailEach);
 
-	api.post('/testing', (req, res)=> {
-		
-		const testing = new Test.OrderTest({
-			userId: req.decoded.id,
-			drop: "drop here"
-		});
-
-		console.log(testing);
-		testing.save()
-				.then(()=> {
-					console.log("saved testing using admin as reference");
-					res.send("saved the testing using Admin schema as reference");
-				}).catch((err) => {
-					console.log("check again");
-					res.send("didnt save");
-				});
-	});
+	// api.post('/testing', (req, res)=> {
+	// });
 
 	api.post("/vendorProfile", vendorProfile.profileView);
 
