@@ -73,6 +73,9 @@ const orderGenerate = (req, res) => {
 		userId: req.decoded.id
 	}).then((data)=> {
 		console.log(data);
+		const storeArea = req.body.storeArea;
+		const storeName = req.body.storeName;
+		const orderId = increment(storeName, storeArea);
 		const generatedOrder = new vendorOrderConfirmed.VendorOrderConfirm();
 		generatedOrder.pickup = data[0].pickupLocation;
 		generatedOrder.drop = data[0].dropLocation;
