@@ -80,6 +80,7 @@ const orderGenerate = (req, res) => {
 		generatedOrder.time = data[0].packageTime;
 		generatedOrder.orderID = orderId;
 		generatedOrder.userID = req.decoded.id;
+		generatedOrder.arrivalTime = req.body.arrival;
 		generatedOrder.save()
 		.then(()=> {
 			res.json({message: "successfully saved"});

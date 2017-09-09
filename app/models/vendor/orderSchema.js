@@ -50,6 +50,10 @@ const OrderConfirm = new Schema({
 		ref: 'Driver',
 		required: true,
 		default: "RAJU12345VEHICLENUMBER"
+	},
+	arrivalTime: {
+		type: Date,
+		required: true
 	}
 });
 
