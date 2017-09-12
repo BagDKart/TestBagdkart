@@ -5,7 +5,7 @@ const orderDetailEach = (req, res) => {
 		orderID: req.body.orderId
 	}).then((data)=> {
 		console.log(data);
-		res.json(data);
+		res.json(data[0]);
 	}).catch((err)=> {
 		console.log(err);
 	});

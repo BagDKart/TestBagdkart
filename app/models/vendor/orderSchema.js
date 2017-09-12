@@ -53,6 +53,23 @@ const OrderConfirm = new Schema({
 	},
 	arrivalTime: {
 		type: Date,
+	},
+	customerName: {
+		type: String,
+		ref: 'OrderVendor'
+	},
+	details: {
+		type: String,
+		ref: 'OrderVendor'
+	},
+	driverPhoneNumber: {
+		type: String,
+		ref: 'Driver',
+		default: '+1 (248) 841-6470'
+	},
+	tips: {
+		type: Number,
+		default: "5"
 	}
 });
 
