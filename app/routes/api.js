@@ -19,7 +19,7 @@ const vendorLogin = require("../handlers/vendor/loginVendor.js");
 const vendorPD = require("../handlers/vendor/req_for_pickup/pick&drop_addr");
 const testApi = require("../handlers/vendor/testapi");
 const orderGenerateVendor = require("../handlers/vendor/req_for_pickup/OrderGenerate");
-const vendorProfile = require("../handlers/vendor/profile/vendorProfile");
+const vendorProfileSave = require("../handlers/vendor/profile/vendorProfileDetailsSave");
 const vendorCancelOrder = require("../handlers/vendor/cancelOrder");
 const vendorOrderHistory = require("../handlers/vendor/orderHistory");
 const vendorOrderDetails = require("../handlers/vendor/orderDetails");
@@ -69,7 +69,7 @@ module.exports = (app, express)=>{
 		res.json(req.decoded);
 	});
 
-	api.post('/test', testApi.trial);
+	api.post('/vendor/test', testApi.trial);
 
 	api.post("/vendorPD", vendorPD.Details);
 	api.post("/vendorPdetails", vendorPD.showDetails);
@@ -82,7 +82,7 @@ module.exports = (app, express)=>{
 	// api.post('/testing', (req, res)=> {
 	// });
 
-	api.post("/vendorProfile", vendorProfile.profileView);
+	api.post("/vendorProfileSave", vendorProfileSave.profileView);
 
 	console.log("in module.exports of api");
 

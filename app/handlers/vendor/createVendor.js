@@ -1,13 +1,13 @@
 console.log("in create vendor");
-const Vendor = require("../../models/vendor/vendorSchema");
+const vendor = require("../../models/vendor/vendorSchema");
 module.exports = (req, res) => {
-	const vendorUser = new Vendor.Vendor ({
+	const vendorUser = new vendor.Vendor ({
 		username: req.body.username,
 		password: req.body.password,
 		firstName: req.body.firstname,
 		lastName: req.body.lastname,
 		email: req.body.email,
-		eId: req.body.id,
+		eId: req.body.eid,
 		phoneNumber: req.body.phonenumber,
 		businessName: req.body.businessname,
 		businessAddress: req.body.businessaddress
@@ -20,7 +20,7 @@ module.exports = (req, res) => {
 				res.json({message: "vendor details saved"});
 			})
 			.catch((err)=> {
-				console.log("error in saving vendor");
+				console.log(err);
 				res.json({message: "vendor not saved"});
 			});
 };

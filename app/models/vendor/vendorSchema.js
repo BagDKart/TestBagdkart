@@ -1,5 +1,6 @@
 console.log("in vendor schema");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 
 const VendorFields = new Schema({
