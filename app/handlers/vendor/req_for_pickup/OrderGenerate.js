@@ -53,7 +53,7 @@ const orderGenerate = (req, res) => {
 				const slicedId = id.slice(5, 10);
 				const idValue =  parseInt(slicedId);
 				const orderId = increment(storeName, storeArea, idValue);
-				
+
 				const generatedOrder = new vendorOrderConfirmed.VendorOrderConfirm();
 				generatedOrder.pickup = pd[0].pickupLocation;
 				generatedOrder.drop = pd[0].dropLocation;
@@ -65,8 +65,8 @@ const orderGenerate = (req, res) => {
 				generatedOrder.userID = req.decoded.id;
 
 				generatedOrder.save()
-				.then(()=> {
-					res.json({message: "successfully saved"});
+				.then((data)=> {
+					res.json(data);
 				}).catch((err)=> {
 					console.log(err);
 				});
