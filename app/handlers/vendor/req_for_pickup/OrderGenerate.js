@@ -44,19 +44,16 @@ const orderGenerate = (req, res) => {
 			userID: req.decoded.id
 		}).then((data)=> {
 			const orders = data;
-			console.log(orders);
+			
 			vendorOrderConfirmed.VendorOrderConfirm.count().then((data)=> {
-				console.log(orders);
 				const count = data;
-				console.log(count);
 				const storeArea = req.body.storeArea;
 				const storeName = req.body.storeName;
 				const id = orders[count-1].orderID;
-				console.log(id);
 				const slicedId = id.slice(5, 10);
 				const idValue =  parseInt(slicedId);
 				const orderId = increment(storeName, storeArea, idValue);
-				console.log(orderId);
+				
 				const generatedOrder = new vendorOrderConfirmed.VendorOrderConfirm();
 				generatedOrder.pickup = pd[0].pickupLocation;
 				generatedOrder.drop = pd[0].dropLocation;
