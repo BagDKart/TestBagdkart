@@ -14,10 +14,10 @@ module.exports = (req, res) => {
 	});
 
 	vendorUser.save()
-			.then(()=> {
+			.then((data)=> {
 				console.log(vendorUser);
 				console.log("vendor saved");
-				res.json({message: "vendor details saved"});
+				res.json({message: "createVendor api successful"});
 			})
 			.catch((err)=> {
 				console.log(err);

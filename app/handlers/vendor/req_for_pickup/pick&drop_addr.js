@@ -1,36 +1,31 @@
 console.log("pick and drop address js page");
 
-const VendorOrder = require("../../../models/vendor/vendorOrderProvideSchema");
+const vendorOrder = require("../../../models/vendor/vendorOrderProvideSchema");
 const config = require("../../../../config");
 const mongo = require("mongodb").MongoClient;
 const secretKey = config.secretKey;
 const url = config.database;
 
-const Details = (req, res) => {
+const vendorDetails = (req, res) => {
 
-	const Vdetails = new VendorOrder.OrderVendor({
-		userId: req.decoded.id,
-		pickupLocation : req.body.pickup,
-		dropLocation : req.body.drop,
-		packageType : req.body.type, 
-		deliveryType : req.body.delivery,
-		paymentMethod : "contract",
-		customerName: req.body.customerName,
-		customerNumber: req.body.customerNumber,
-		packageTime : req.body.time,
-		addrDetails: req.body.addrDetails,
-		specInstruc: req.body.instructions
-	});
+	const vDetails = new vendorOrder.OrderVendor();
+	vDetails.pickupLocation = req.body.pickup;
+	vDetails.dropLocation = req.body.drop;
+	vDetails.packageType = req.body.type;
+	vDetails.deliveryType = req.body.delivery;
+	vDetails.useridVendor = req.decoded.id;
+	vDetails.customerName = req.body.cName;
+	vDetails.customerNumber = req.body.cNumber;
+	vDetails.addrDetails = req.body.addrDetails;
+	vDetails.specInstruc = req.body.instructions;
 
-
-	Vdetails.save()
+	vDetails.save()
 		.then((data)=> {
-		console.log(`Vdetails saved ${data}`);
+		res.json(`Vdetails saved ${data}`);
 	}).catch((err)=> {
-		console.log(`Vdetails failed : ${err}`);
+		res.json(`Vdetails failed : ${err}`);
 	});
 
-	res.send(Vdetails);
 };
 
 const showDetails = (req, res)=> {
@@ -61,7 +56,7 @@ const appendDetails = (req, res)=> {
 };
 
 module.exports = {
-	Details,
+	vendorDetails,
 	showDetails,
 	appendDetails
 };

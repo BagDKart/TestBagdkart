@@ -14,13 +14,6 @@ const OrderDetails = new Schema ({
 			unique: false
 		}
 	},
-	orderId: {
-		type: String,
-		index: {
-			unique: false
-		},
-		required: true
-	}
 });
 
 // TestDetails.pre("save", function(next) {

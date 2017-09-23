@@ -12,7 +12,7 @@ const cancelOrder = (req, res) => {
 		.updateOne({orderID: req.body.orderId}, {$set:{status: false}})
 		.then((data)=> {
 			console.log("updated successfully");
-			res.json("values updates");
+			res.json("values updated");
 		}).catch((err)=>{
 			console.log(err);
 		});

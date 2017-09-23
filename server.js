@@ -9,6 +9,7 @@ const morgan = require("morgan");
 const api = require("./app/routes/api.js")(app, express);
 const config = require("./config.js");
 const port = config.port;
+// const swaggerUi = require('swagger-ui-express');
 
 mongoose.Promise = global.Promise;
 
@@ -34,6 +35,8 @@ app.use(bodyParser.json());
 
 app.use(morgan('dev'));
 
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use("/api", api);
 
 app.listen(port, function(err) {
@@ -43,3 +46,4 @@ app.listen(port, function(err) {
 		console.log(`listening to port ${port}`);
 	}
 });
+

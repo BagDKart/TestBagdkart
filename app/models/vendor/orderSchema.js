@@ -70,7 +70,7 @@ const OrderConfirm = new Schema({
 	tips: {
 		type: Number,
 		default: "5"
-	}
+	},
 });
 
 const VendorOrderConfirm = mongoose.model('VendorOrderConfirm', OrderConfirm);

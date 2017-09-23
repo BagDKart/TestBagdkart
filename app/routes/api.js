@@ -5,12 +5,6 @@ const jwt = require("jsonwebtoken");
 const config = require("../../config");
 const secretKey = config.secretKey;
 
-const Test = require("../models/testSchema");
-const Admin = require("../models/admin/adminSchema");
-const TestingValue = require("../models/testingSchema");
-const VendorOrder = require("../models/vendor/vendorOrderProvideSchema");
-const Vendor = require("../models/vendor/vendorSchema");
-
 const createVendor = require("../handlers/vendor/createVendor.js");
 const createAdmin = require("../handlers/admin/createAdmin.js");
 const createDriver = require("../handlers/driver/createDriver.js");
@@ -71,7 +65,7 @@ module.exports = (app, express)=>{
 
 	api.post('/vendor/test', testApi.trial);
 
-	api.post("/vendorPD", vendorPD.Details);
+	api.post("/vendorPD", vendorPD.vendorDetails);
 	api.post("/vendorPdetails", vendorPD.showDetails);
 	api.post("/vendorPappend", vendorPD.appendDetails);
 	api.post("/vendorCancelOrder", vendorCancelOrder.cancelOrder);

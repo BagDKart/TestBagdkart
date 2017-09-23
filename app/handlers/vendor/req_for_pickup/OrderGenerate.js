@@ -39,7 +39,6 @@ const orderGenerate = (req, res) => {
 		userId: req.decoded.id
 	}).then((data)=> {
 		const pd = data;
-
 		vendorOrderConfirmed.VendorOrderConfirm.find({
 			userID: req.decoded.id
 		}).then((data)=> {

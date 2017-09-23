@@ -1,17 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const TestingDetails = new Schema({
-	testValue: {
-		type: String
+const testingDetails = new Schema({
+	userId: {
+		type: Schema.Types.ObjectId,
+		ref: 'Admin'
 	},
-	testId: {
-		type: String,
-		ref: 'OrderTest'
-	}
 });
 
-const Testing = mongoose.model("Testing", TestingDetails); 
+const testing = mongoose.model("Testing", testingDetails); 
 module.exports = {
-	Testing
+	testing
 };
