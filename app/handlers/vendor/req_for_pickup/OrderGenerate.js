@@ -36,24 +36,30 @@ const increment = (req, res, count) => {
 
 const orderGenerate = (req, res) => {
 	vendorOrder.OrderVendor.find({
-		userId: req.decoded.id
+			useridVendor: req.decoded.id	
 	}).then((data)=> {
-		const pd = data;
+		let pd = data;
 		vendorOrderConfirmed.VendorOrderConfirm.find({
 			userID: req.decoded.id
 		}).then((data)=> {
 			const orders = data;
-			
+
 			vendorOrderConfirmed.VendorOrderConfirm.count().then((data)=> {
+				let orderId = "";
 				const count = data;
 				const storeArea = req.body.storeArea;
 				const storeName = req.body.storeName;
-				const id = orders[count-1].orderID;
-				const slicedId = id.slice(5, 10);
-				const idValue =  parseInt(slicedId);
-				const orderId = increment(storeName, storeArea, idValue);
+				if(count==0) {
+					orderId = "${storeName}${storeArea}00001";
+				} else {
+					const id = orders[count-1].orderID;
+					const slicedId = id.slice(5, 10);
+					const idValue =  parseInt(slicedId);
+					orderId = increment(storeName, storeArea, idValue);
+				}
 
 				const generatedOrder = new vendorOrderConfirmed.VendorOrderConfirm();
+				
 				generatedOrder.pickup = pd[0].pickupLocation;
 				generatedOrder.drop = pd[0].dropLocation;
 				generatedOrder.schedule = pd[0].packageType;
