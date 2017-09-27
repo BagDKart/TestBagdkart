@@ -7,8 +7,8 @@ const vendorSort = (data) => {
 	vendorSortStatus(data);
 };
 
-const vendorSortStatus = (data) => {
-	if(!data) return res.json("error in vendorSort");
+const vendorSortStatus = (req,res,data) => {
+	if(!data) return console.log("error in vendorSort");
 	console.log(data);
 	orderFind.VendorOrderConfirm.find({
 		status: req.body.status

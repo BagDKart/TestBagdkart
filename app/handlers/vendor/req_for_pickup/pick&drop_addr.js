@@ -18,6 +18,7 @@ const vendorDetails = (req, res) => {
 	vDetails.customerNumber = req.body.cNumber;
 	vDetails.addrDetails = req.body.addrDetails;
 	vDetails.specInstruc = req.body.instructions;
+	vDetails.packageTime = req.body.time;
 
 	vDetails.save()
 		.then((data)=> {

@@ -34,7 +34,6 @@ const OrderDetails = new Schema({
 	packageTime: {
 		type: Date,
 		default: Date.now,
-		required: true
 	},
 	customerName: {
 		type: String,

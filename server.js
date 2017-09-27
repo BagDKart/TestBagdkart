@@ -45,7 +45,7 @@ app.listen(appEnv.port, appEnv.bind, function(err) {
 	if(err) {
 		console.log("error in listening");
 	} else {
-		console.log(`listening to port ${appEnv.port}`);
+		console.log(`listening to port ${appEnv.url}`);
 	}
 });
 
