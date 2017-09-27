@@ -10,6 +10,8 @@ const api = require("./app/routes/api.js")(app, express);
 const config = require("./config.js");
 const port = config.port;
 // const swaggerUi = require('swagger-ui-express');
+var cfenv = require("cfenv");
+var appEnv = cfenv.getAppEnv();
 
 mongoose.Promise = global.Promise;
 
@@ -39,11 +41,11 @@ app.use(morgan('dev'));
 
 app.use("/api", api);
 
-app.listen(port, function(err) {
+app.listen(appEnv.port, appEnv.bind, function(err) {
 	if(err) {
 		console.log("error in listening");
 	} else {
-		console.log(`listening to port ${port}`);
+		console.log(`listening to port ${appEnv.port}`);
 	}
 });
 
