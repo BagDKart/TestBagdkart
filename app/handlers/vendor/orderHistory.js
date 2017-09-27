@@ -3,18 +3,34 @@ const vendorOrder = require("../../models/vendor/vendorOrderProvideSchema");
 
 var orders = [];
 
+const vendorSort = (data) => {
+	vendorSortStatus(data);
+};
+
+const vendorSortStatus = (data) => {
+	if(!data) return res.json("error in vendorSort");
+	console.log(data);
+	orderFind.VendorOrderConfirm.find({
+		status: req.body.status
+	}).then((data)=> {
+		console.log("sorted using status");
+	}).catch((err)=> {
+		console.log("sorting failed");
+	});
+};
+
+
 const orderHistory = (req, res) => {
 	orderFind.VendorOrderConfirm.find({
 		userID: req.decoded.id
 	}).then((data)=> {
+		vendorSort(data);
 		res.json(data);
 	}).catch((err) => {
 		console.log(err);
 		res.json({message: "check the error in orderHistory"});
 	});
 };
-
-
 
 module.exports = {
 	orderHistory
