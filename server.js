@@ -41,11 +41,11 @@ app.use(morgan('dev'));
 
 app.use("/api", api);
 
-app.listen(appEnv.port, appEnv.bind, function(err) {
+app.listen(port, function(err) {
 	if(err) {
 		console.log("error in listening");
 	} else {
-		console.log(`listening to port ${appEnv.url}`);
+		console.log(`listening to port ${port}`);
 	}
 });
 
