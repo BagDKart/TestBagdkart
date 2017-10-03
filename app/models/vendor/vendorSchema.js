@@ -1,6 +1,6 @@
 console.log("in vendor schema");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const VendorFields = new Schema({
@@ -47,6 +47,7 @@ VendorFields.pre('save', function (next){
 	let venSave = this;
     	bcrypt.hash(venSave.password, 10).then((hash) => {
 	        venSave.password = hash; //if there is no error we are going to hash
+	        console.log("into this as vendor");
 	        next();
 	    }).catch((err) => {
 	    	console.log("password not hashed :"+err);
