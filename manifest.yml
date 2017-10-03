@@ -3,3 +3,4 @@ applications:
 - name: TestBagDKartPipeline
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack
   host: TestBagDKartPipeline
+  command: node server.js
