@@ -24,7 +24,7 @@ const orderHistory = (req, res) => {
 	orderFind.VendorOrderConfirm.find({
 		userID: req.decoded.id
 	}).then((data)=> {
-		vendorSort(data);
+		// vendorSort(data);
 		res.json(data);
 	}).catch((err) => {
 		console.log(err);
