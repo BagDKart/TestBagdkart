@@ -1,3 +1,4 @@
 ---
 applications:
 - name: TestBagDKartPipeline
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
