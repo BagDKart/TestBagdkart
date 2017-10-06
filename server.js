@@ -9,7 +9,7 @@ const morgan = require("morgan");
 const api = require("./app/routes/api.js")(app, express);
 const config = require("./config.js");
 const port = config.port;
-// const swaggerUi = require('swagger-ui-express');
+
 var cfenv = require("cfenv");
 var appEnv = cfenv.getAppEnv();
 
@@ -36,8 +36,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use(morgan('dev'));
-
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use("/api", api);
 

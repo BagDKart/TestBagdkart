@@ -22,7 +22,7 @@ const vendorDetails = (req, res) => {
 
 	vDetails.save()
 		.then((data)=> {
-		res.json(`Vdetails saved ${data}`);
+		res.json(data);
 	}).catch((err)=> {
 		res.json(`Vdetails failed : ${err}`);
 	});
