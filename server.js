@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const lodash = require("lodash");
 const mongo = require("mongodb").MongoClient;
 const bodyParser = require("body-parser");
 const morgan = require("morgan");

@@ -1,8 +1,7 @@
 ---
 applications:
 - name: TestBagDKartPipeline
-  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
-  host: TestBagDKartPipeline
+  host: testbagdkart
   command: node server.js
   domain: mybluemix.net
   instances: 1
