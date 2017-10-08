@@ -1,6 +1,6 @@
 ---
 applications:
-- name: TestBagDKartPipeline
+- name: TestBagDKart
   host: testbagdkart
   command: node server.js
   domain: mybluemix.net
