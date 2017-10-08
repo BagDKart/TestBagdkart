@@ -1,45 +1,40 @@
 {
-  "name": "TestBagDKartPipeline",
+  "name": "bagdkart-back-end",
   "version": "1.0.0",
-  "description": "\"Backend of bagdkart\"",
+  "description": "bagdkart backend",
   "main": "server.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "https://registry.npmjs.org/body-parser/-/body-parser-1.17.2.tgz",
+    "cfenv": "^1.0.4",
+    "express": "^4.15.4",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "jsonwebtoken": "^7.4.2",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.5",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "https://registry.npmjs.org/nodemon/-/nodemon-1.12.1.tgz"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BagDKart/BagDKart-Back-end.git"
+    "url": "git+https://github.com/BagDKart/BagDKart-Back-end.git"
   },
-  "author": "Balasubramanyam, Vasu Dundigalla, Vasantha K",
+  "keywords": [
+    "\"backend\""
+  ],
+  "author": "Balasubramanyam",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/xntricteam/adminui#readme",
-  "dependencies": {
-    "angular": "^1.6.5",
-    "angular-animate": "^1.6.5",
-    "angular-aria": "^1.6.5",
-    "angular-material": "^1.1.4",
-    "angular-messages": "^1.6.5",
-    "angular-route": "^1.6.5",
-    "assert": "^1.4.1",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.17.2",
-    "bootstrap": "^4.0.0-alpha.6",
-    "cfenv": "^1.0.4",
-    "express": "^4.15.4",
-    "jsonwebtoken": "^7.4.2",
-    "lodash": "^4.17.4",
-    "mongodb": "^2.2.30",
-    "mongoose": "^4.11.5",
-    "morgan": "^1.8.2"
+  "bugs": {
+    "url": "https://github.com/BagDKart/BagDKart-Back-end/issues"
   },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-nodemon": "^2.2.1",
-    "nodemon": "^1.11.0"
-  },
-  "engines": {
-    "node": "6.11.3",
-    "npm": "3.10.10"
-  }
+  "homepage": "https://github.com/BagDKart/BagDKart-Back-end#readme"
 }

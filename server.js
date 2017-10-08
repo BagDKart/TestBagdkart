@@ -37,6 +37,9 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 // app.use("/api", api);
+app.get('*', function(req, res){
+    res.sendFile('/bagdkart/BagDKart-Back-end/index.html');
+});
 
 app.listen(port, function(err) {
 	if(err) {
