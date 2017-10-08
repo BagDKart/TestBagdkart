@@ -1,3 +1,4 @@
+console.log("in order generate");
 const vendorOrderConfirmed = require("../../../models/vendor/orderSchema");
 const testOrder = require("../../../models/testSchema");
 const vendorOrder = require("../../../models/vendor/vendorOrderProvideSchema");

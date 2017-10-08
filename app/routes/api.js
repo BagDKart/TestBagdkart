@@ -32,11 +32,7 @@ module.exports = (app, express)=>{
 		});
 	});
 
-	// api.post("/globalTest", (req, res)=> {
-	// 	console.log(global);
-	// 	res.json("check the console");
-	// });
-	
+
 	api.post("/createVendor", createVendor);
 	api.post("/createAdmin", createAdmin);
 	api.post("/createDriver", createDriver);

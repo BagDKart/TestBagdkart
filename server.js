@@ -10,17 +10,15 @@ const api = require("./app/routes/api.js")(app, express);
 const config = require("./config.js");
 const port = config.port;
 
-var cfenv = require("cfenv");
-var appEnv = cfenv.getAppEnv();
-
 mongoose.Promise = global.Promise;
 
-mongoose.connect(config.database)
-		.then((data)=> {
-			console.log("connected to mongoose");
-		}).catch((err)=> {
-			console.log("err in connecting to mongoose")
-		});
+mongoose.connect(config.database, {
+	useMongoClient: true,
+}).then((data)=> {
+	console.log("connected to mongoose");
+}).catch((err)=> {
+	console.log("err in connecting to mongoose")
+});
 
 mongo.connect(config.database)
 	.then(()=> {
