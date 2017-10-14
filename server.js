@@ -5,7 +5,7 @@ const mongo = require("mongodb").MongoClient;
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 
-// const api = require("./app/routes/api.js")(app, express);
+const api = require("./app/routes/api.js")(app, express);
 const config = require("./config.js");
 const port = config.port;
 
@@ -35,7 +35,8 @@ app.use(bodyParser.json());
 
 app.use(morgan('dev'));
 
-// app.use("/api", api);
+app.use("/api", api);
+
 app.get('*', function(req, res){
     res.send("hello bagdkart backend");
 });
