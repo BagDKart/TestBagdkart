@@ -71,8 +71,8 @@ const appendDetails = (req, res)=> {
 			db.collection("ordervendors").find({useridVendor: req.decoded.id}).toArray((err, result)=> {
 				// res.json(result);
 				let requestId = "";
-				let storeArea = req.body.storeArea;
-				let storeName = req.body.storeName;
+				let storeArea = "MI";
+				let storeName = "SHA";
 				if(result.length==0) {
 					requestId = `R${storeName}${storeArea}00001`;
 				} else {

@@ -8,13 +8,14 @@ const url = config.database;
 
 const trial = (req, res) => {
 	const one = new testing.testing ();
-	one.userId = req.decoded.id;
-	one.save()
-		.then((data)=> {
-			res.json(data);
-		}).catch((err)=> {
-			res.json(err);
-		});
+	one.time = req.body.time;
+	res.json(one.time);
+	// one.save()
+	// 	.then((data)=> {
+	// 		res.json(data);
+	// 	}).catch((err)=> {
+	// 		res.json(err);
+	// 	});
 };
 
 module.exports = {
