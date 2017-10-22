@@ -69,6 +69,7 @@ const appendDetails = (req, res)=> {
 	mongo.connect(url)
 		.then((db)=> {
 			db.collection("ordervendors").find({useridVendor: req.decoded.id}).toArray((err, result)=> {
+					// res.json("kya re bhai");
 				// res.json(result);
 				let requestId = "";
 				let storeArea = "MI";
