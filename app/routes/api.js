@@ -62,6 +62,7 @@ module.exports = (app, express)=>{
 	});
 
 	api.post('/vendor/test', testApi.trial);
+	api.post('/vendor/test2', testApi.trial2);
 
 	api.post("/vendorPD", vendorPD.vendorDetails);
 	api.post("/vendorPappend", vendorPD.appendDetails);

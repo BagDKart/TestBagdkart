@@ -9,15 +9,20 @@ const url = config.database;
 const trial = (req, res) => {
 	const one = new testing.testing ();
 	one.time = req.body.time;
-	res.json(one.time);
-	// one.save()
-	// 	.then((data)=> {
-	// 		res.json(data);
-	// 	}).catch((err)=> {
-	// 		res.json(err);
-	// 	});
+	if(one) {
+		trail2(one);
+	} else {
+		console.log("in trail");
+	}
 };
 
+const trail2 = (req)=> {
+	console.log("in trail2");
+	res.json("in control 2");
+}
+
+
 module.exports = {
-	trial
+	trial,
+	trail2
 };
