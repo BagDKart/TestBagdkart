@@ -1,4 +1,4 @@
-console.log("in the invoice page");
+
 const vendorDetails = require("../../models/vendor/vendorSchema");
 const vendorInvoice = require("../../models/vendor/vendorInvoiceSchema");
 const idGeneratorInv = require("./invIDGenerator");

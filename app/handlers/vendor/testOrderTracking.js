@@ -1,9 +1,17 @@
 const testA = (req, res)=> {
-	res.json("this is test 1");
+	const obj = {
+		name: "Balu",
+		number: 66666668
+	}
+	res.json(obj);
 };
 
 const testB = (req, res)=> {
-	res.json("this is test 2");
+	const obj2 = {
+		name: "vivek",
+		number: 88888888
+	}
+	res.json(obj2);
 };
 
 module.exports = {

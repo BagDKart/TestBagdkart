@@ -1,4 +1,4 @@
-const testing = "this is the value";
+
 
 const condition = (req, count)=> {
 	let number;
@@ -29,6 +29,5 @@ const increment = (role, req, res, count) => {
 };
 
 module.exports = {
-	testing,
 	increment
 };
