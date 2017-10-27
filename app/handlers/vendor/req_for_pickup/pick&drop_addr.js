@@ -31,39 +31,10 @@ const vendorDetails = (req, res) => {
 
 };
 
-// const rCondition = (name, id)=> {
-// 	console.log("this is in rcondition function");
-// 	let rnumber;
-// 	if(name && id<9) {
-// 		rnumber = "0000";
-// 	}
-// 	else if(name && id<99){
-// 		rnumber = "000"
-// 	} else if(req && id<999) {
-// 		rnumber = "00"
-// 	} else if(req && id<9999) {
-// 		rnumber = "0" 
-// 	}
-// 	else {
-// 		console.log(`exceeded ${id}`);
-// 	}
-// 	return rnumber;
-// };
-
-// const rIncrement = (name, area, id)=> {
-// 	console.log("this is in increment function");
-// 	let rvalue;
-// 	console.log(id);
-// 	if(name && id<9999) {
-// 		id++;
-// 		let num = rCondition(name, id);
-// 		rvalue = `R`+name+area+num+id;
-// 		console.log(`this is value in increment func ${rvalue}`);
-// 	} else {
-// 		console.log("in else loop of rIncrement");
-// 	}
-// 	return rvalue;
-// };
+const showDetails = (req, res)=> {
+	console.log("testing in pick and drop");
+	res.json("testing in pick and drop");
+};
 
 const appendDetails = (req, res)=> {
 	mongo.connect(url)
@@ -112,5 +83,6 @@ const appendDetails = (req, res)=> {
 
 module.exports = {
 	vendorDetails,
-	appendDetails
+	appendDetails,
+	showDetails
 };

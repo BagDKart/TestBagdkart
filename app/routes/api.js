@@ -11,7 +11,7 @@ const createDriver = require("../handlers/driver/createDriver.js");
 const adminLogin = require("../handlers/admin/loginAdmin.js");
 const vendorLogin = require("../handlers/vendor/loginVendor.js");
 const vendorPD = require("../handlers/vendor/req_for_pickup/pick&drop_addr");
-const testApi = require("../handlers/vendor/testapi");
+const testApi = require("../handlers/vendor/testOrderTracking");
 const orderGenerateVendor = require("../handlers/vendor/req_for_pickup/orderGenerate");
 const vendorProfileSave = require("../handlers/vendor/profile/vendorProfileDetailsSave");
 const vendorCancelOrder = require("../handlers/vendor/cancelOrder");
@@ -61,9 +61,8 @@ module.exports = (app, express)=>{
 		res.json(req.decoded);
 	});
 
-	api.post('/vendor/test', testApi.trial);
-	api.post('/vendor/test2', testApi.trial2);
-
+	api.post('/test', testApi.testA);
+	api.post('/testing', testApi.testB);
 	api.post("/vendorPD", vendorPD.vendorDetails);
 	api.post("/vendorPappend", vendorPD.appendDetails);
 	api.post("/vendorCancelOrder", vendorCancelOrder.cancelOrder);
