@@ -71,6 +71,12 @@ const OrderConfirm = new Schema({
 		type: Number,
 		default: "5"
 	},
+	customerNum: {
+		type: Number,
+	},
+	specInstruct: {
+		type: String
+	}
 });
 
 const VendorOrderConfirm = mongoose.model('VendorOrderConfirm', OrderConfirm);

@@ -39,6 +39,8 @@ const orderGenerate = (req, res) => {
 			generatedOrder.time = pd[0].packageTime;
 			generatedOrder.details = pd[0].addrDetails;
 			generatedOrder.customerName = pd[0].customerName;
+			generatedOrder.customerNum = pd[0].customerNumber;
+			generatedOrder.specInstruct = pd[0].specInstruc;
 			generatedOrder.orderID = orderId;
 			generatedOrder.userID = req.decoded.id;
 
