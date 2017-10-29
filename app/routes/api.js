@@ -15,6 +15,7 @@ const testApi = require("../handlers/vendor/testOrderTracking");
 const orderGenerateVendor = require("../handlers/vendor/req_for_pickup/orderGenerate");
 const vendorProfileSave = require("../handlers/vendor/profile/vendorProfileDetailsSave");
 const vendorCancelOrder = require("../handlers/vendor/cancelOrder");
+const vendorCancelOrderDetails = require("../handlers/vendor/cancelOrderDetails");
 const vendorOrderHistory = require("../handlers/vendor/orderHistory");
 const vendorOrderDetails = require("../handlers/vendor/orderDetails");
 const vendorInvoice = require("../handlers/vendor/vendorInvoice");
@@ -66,6 +67,7 @@ module.exports = (app, express)=>{
 	api.post("/vendorPD", vendorPD.vendorDetails);
 	api.post("/vendorPappend", vendorPD.appendDetails);
 	api.post("/vendorCancelOrder", vendorCancelOrder.cancelOrder);
+	api.post("/vendorCancelOrderDetails", vendorCancelOrderDetails.cancelledOrder);
 	api.post("/vendorOrderHistory", vendorOrderHistory.orderHistory);
 	api.post("/orderGenerate", orderGenerateVendor.orderGenerate);
 	api.post("/vendorOrderDetails", vendorOrderDetails.orderDetailEach);
