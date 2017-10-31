@@ -76,6 +76,9 @@ const OrderConfirm = new Schema({
 	},
 	specInstruct: {
 		type: String
+	},
+	reasonForCancel: {
+		type: String
 	}
 });
 

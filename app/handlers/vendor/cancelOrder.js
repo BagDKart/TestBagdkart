@@ -7,12 +7,12 @@ const cancelOrder = (req, res) => {
 		if(err) return err;
 
 		console.log("connected successfully in cancel order");
-		
+		const reasonForCancelling = req.body.reason;
 		db.collection('vendororderconfirms')
-		.updateOne({orderID: req.body.orderId}, {$set:{status: false}})
+		.updateOne({orderID: req.body.orderId}, {$set:{status: false, requestForCancel: reasonForCancelling}})
 		.then((data)=> {
 			console.log("updated successfully");
-			res.json("order has been cancelled");
+			res.json(data);
 		}).catch((err)=>{
 			console.log(err);
 		});
