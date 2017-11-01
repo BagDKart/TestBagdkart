@@ -6,7 +6,7 @@ const objectID = require("mongodb").ObjectID;
 const cancelledOrder = (req, res) => {
 	mongo.connect(urL, (err, db) => {
 		if(err) return err;
-		db.collection('vendororderconfirms').find({ userID:req.decoded.id, status: false}).toArray((err, result)=>{
+		db.collection('vendororderconfirms').find({ userID:req.decoded.id, status: false, orderID: req.body.orderId}).toArray((err, result)=>{
 			if(err) console.log(err);
 			console.log(result);
 			res.json(result);
