@@ -12,6 +12,8 @@ const express = require("express"),
 
 console.log(appEnv);
 
+
+
 // mongoose.Promise = global.Promise;
 
 // mongoose.connect(config.database, {
@@ -40,17 +42,17 @@ console.log(appEnv);
 
 // app.use("/api", api);
 
-// app.get('*', function(req, res){
-//     res.send("hello bagdkart backend");
-// });
+app.get('*', function(req, res){
+    res.send("hello bagdkart backend");
+});
 
 
 
-// app.listen(port, function(err) {
-// 	if(err) {
-// 		console.log("error in listening");
-// 	} else {
-// 		console.log(`listening to port ${port}`);
-// 	}
-// });
+app.listen(appEnv.port, function(err) {
+	if(err) {
+		console.log("error in listening");
+	} else {
+		console.log(`listening to port ${appEnv.port}`);
+	}
+});
 
