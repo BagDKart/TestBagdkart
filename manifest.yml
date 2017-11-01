@@ -1,16 +1,9 @@
 ---
 applications:
-- name: BagDKart-Back-end
-  host: bagdkart-
-  memory: 512M
+- name: bagdkart-back-end
   domain: mybluemix.net
   instances: 1
-  services:
-  - bagdkart-mongodb
   env:
     NODE_ENV: cloud-foundry
-declared-services:
-  bagdkart-mongodb:
-    label: compose-for-mongodb
-    plan: Standard
+
 
