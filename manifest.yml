@@ -4,13 +4,13 @@ applications:
   command: node server.js
   domain: mybluemix.net
   instances: 1
-  services:
-  - Credentials-1
-  env:
-    NODE_ENV: cloud-foundry
-declared-services:
-  Credentials-1:
-    label: compose-for-mongodb
-    plan: Standard
+#   services:
+#   - Credentials-1
+#   env:
+#     NODE_ENV: cloud-foundry
+# declared-services:
+#   Credentials-1:
+#     label: compose-for-mongodb
+#     plan: Standard
   
 
