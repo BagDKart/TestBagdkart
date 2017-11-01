@@ -291,7 +291,7 @@ if(appEnv.isLocal){
 // }
 
 // // Protected route requiring authorization to access.
-app.get('/*', function(req, res){
+app.get('*', function(req, res){
     res.json("hello i am back");
 });
 
